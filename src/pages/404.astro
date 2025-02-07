@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+export const prerender = true;
+---
+
+
+<Layout title="Страница не найдена" description="Страница не найдена">
+<main>
+  <section class="error">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="error_wrapper">
+            <img src="/full_logo.svg" alt="">
+            <h1>Страница не найдена</h1>
+            <button class="btn_back">
+              <a href="/">На главную</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</Layout>
+
+
+<style>
+  body {
+    background: #285347;
+  }
+  .error_wrapper {
+    margin-top: 100px;
+    max-height: 100vh;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .error_wrapper img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .error_wrapper h1 {
+    font-size: clamp(30px,50px,70px);
+    /* margin-top: 30px; */
+    color: #ffffff;
+    font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+  .error_wrapper .btn_back {
+    padding: 10px 26px;
+    background: #AE2E42;
+    color: #ffffff;
+    corsor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 9px;
+  }
+
+  .error_wrapper .btn_back:hover {
+
+  }
+
+  .error_wrapper .btn_back a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+</style>

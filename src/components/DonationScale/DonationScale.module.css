@@ -1,0 +1,48 @@
+.story_banner_image {
+  position: relative;
+}
+
+.img {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 8px;
+  background-color: #ffffff;
+  border-radius: 9px;
+  box-shadow: 2px 4px 8px #223c5033;
+}
+
+.img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.donation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.donation_outer {
+  background: #cbd8e3;
+  height: 8px;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.donation_inner {
+  background: #285347;
+  height: 8px;
+}
+
+.donation_numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.donation_numbers span {
+  font-size: 18px;
+  color: #ae2e42;
+}

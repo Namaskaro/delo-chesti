@@ -1,0 +1,98 @@
+.slideImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ae2e42;
+  width: 20px;
+  height: 20px;
+}
+
+.swiper-button-next {
+  position: absolute;
+  top: 96%;
+  right: 10px;
+  left: auto;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  top: 96%;
+  right: 140px !important;
+  left: auto;
+}
+
+.swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  width: 80%;
+  top: 95%;
+  left: 0;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #ae2e42;
+}
+
+@media screen and (max-width: 991px) {
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 30px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 97%;
+  }
+  .swiper-button-next {
+    right: 20px;
+  }
+
+  @media screen and (max-width: 991px) {
+    .swiper-horizontal > .swiper-pagination-progressbar,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal {
+      width: 60%;
+      top: 95%;
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    width: 50%;
+    top: 95%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .swiper-horizontal > .swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    width: 30%;
+    top: 93%;
+    left: 0;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 96%;
+    right: 20px;
+    left: auto;
+  }
+
+  .swiper-button-prev {
+    position: absolute;
+    top: 96%;
+    right: 170px !important;
+    left: auto;
+  }
+}

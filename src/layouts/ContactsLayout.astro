@@ -1,0 +1,186 @@
+---
+interface Props {
+	title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'remixicon/fonts/remixicon.css'   
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="index, follow">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="yandex-verification" content="a0491486021eb2c4" />
+		<meta name="generator" content={Astro.generator} />
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(97720622, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/97720622" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+		<title>{title}</title>
+	</head>
+	<body>
+        <Header/>
+		<slot />
+<Footer/>
+
+		<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?apikey=bcc74c0a-04c5-413c-bc27-7e48f6a3538d&lang=ru_RU;scroll=false"></script>
+		<script type="text/javascript">
+			function mapLoad() {
+			if (ymaps) {
+			
+					function init() {
+							var i;
+							var place;
+							var pointer = [47.089337,37.495563];
+							var studioMap = new ymaps.Map('map', {
+									center: [47.089337,37.495563],
+									zoom: 16,
+							});
+			place = new ymaps.Placemark(pointer);
+			studioMap.geoObjects.add(place);
+					}
+					ymaps.ready(init);
+			}
+	}
+	mapLoad()
+	
+
+	const showMenu = (toggleId, navId) =>{
+   const toggle = document.getElementById(toggleId),
+         nav = document.getElementById(navId)
+
+   toggle?.addEventListener('click', () =>{
+       // Add show-menu class to nav menu
+       nav?.classList.toggle('show-menu')
+
+       // Add show-icon to show and hide the menu icon
+       toggle.classList.toggle('show-icon')
+   })
+}
+
+showMenu('nav-toggle','nav-menu')
+        </script>
+        <script>
+         document.querySelectorAll('.nav__link').forEach(link => {
+          // @ts-ignore
+  if(link.href === window.location.href){
+    link.setAttribute('aria-current', 'page')
+  }
+})
+
+document.querySelectorAll('a[href^="#"').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      let href = this.getAttribute('href').substring(1);
+
+      const scrollTarget = document.getElementById(href);
+
+      const topOffset = 84;
+
+      const elementPosition = scrollTarget?.getBoundingClientRect().top;
+      const offsetPosition = elementPosition! - topOffset;
+
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    });
+  });
+	</script> 
+	</body>
+</html>
+<style is:global>
+	:root {
+        --white-color:  #F4EBE1;
+        --red-color: #AE2E42;
+        --green-color: #285347;
+        --gray-color: #4A4A4A;
+
+        --section-margin-x: 30px;
+    }
+
+    body {
+      font-family: "PT Sans", sans-serif;
+    }
+		.breadcrumbs ul {
+  list-style: none;
+ 
+  border-radius: 10px;
+  margin-bottom: 0;
+  padding: 10px;
+}
+.breadcrumbs ul li{
+  display: inline;                                                                                                                                                  
+}
+.breadcrumbs ul li + li::before{
+  /* padding: 10px; */
+  color:#7D8597;
+	font-weight: 400;
+  content: '➝'; 
+  font-size: 1rem;                                                                                                                                              
+}
+.breadcrumbs ul li a{
+  font-size: 15px;
+  color: #666a6d;
+  text-decoration: none;
+  margin: 0px 10px;
+}
+.breadcrumbs ul li a.active{
+  color: #AE2E42;
+}
+.breadcrumbs ul li a:hover{
+  
+  color: #AE2E42;
+}
+
+.title {
+		text-align: center;
+	}
+	.title h1,h2 {
+		font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #4A4A4A;
+    padding: 45px 0;
+		font-family: "Lato", sans-serif;
+	}
+	.title h1::after,h2::after {
+		display: block;
+    margin: 10px auto 10px auto;
+    height: 2px;
+    width: 35px;
+    content: '';
+    background: #285347;
+	}
+</style>

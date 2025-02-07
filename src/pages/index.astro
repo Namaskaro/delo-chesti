@@ -1,0 +1,359 @@
+---
+
+import HelpForm from '../components/HelpForm/HelpForm';
+import PaymentForm from '../components/PaymentForm.astro';
+import AddProduct from '../components/AddProduct/AddProduct'
+import Layout from '../layouts/Layout.astro';
+
+import Banner from '../components/Banner.astro';
+import Document from '../components/Document.astro'
+import NewsCard from '../components/NewsCard.astro';
+import ProductCard from '../components/ProductCard/ProductCard'
+export const prerender = true;
+
+const documents = [
+	{id:1, title: 'Устав фонда Дело Чести', link: '/documents/ustav.pdf', date: '20.03.2024'},
+	{id:2, title: 'Лист записи ЕГРЮЛ', link: '/documents/list-egrul.pdf', date: '04.06.2024'},					
+	{id:3, title: 'Свидетельство о постановке на налоговый учет', link: '/documents/svidetelstvo-o-postanovke-nalogovaya.pdf', date: '04.06.2024'},			
+	{id:4, title: 'Свидетельство о регистрации', link: '/documents/registraciya.pdf', date: '28.05.2024'},	
+	{id:5, title: 'Реквизиты фонда', link: '/documents/card.pdf', date: '05.06.2024'},														
+]
+
+const news = [
+	{id:1, 
+		imgUrl: '/img/news/news_1.jpg',
+		title: 'На всех скоростях – в новую жизнь!', 
+		shortText: '30 июня в Мариуполе состоится благотворительный автомобильный фестиваль «Азовский дрифт».',
+	p1: '30 июня в Мариуполе состоится благотворительный автомобильный фестиваль «Азовский дрифт». В городе, где активно восстанавливается жизнь, запланирован драйвовый праздник для взрослых и детей. ',
+	p2: 'Малыши и взрослые получат уникальную возможность увидеть автопробег и показательный демонстрационный заезд модифицированных спортивных автомобилей, сфотографироваться на их фоне, а также в неформальной обстановке пообщаться с экспертами. ',
+	p3: 'Основная цель мероприятия — помочь жителям с таким трудом освобождённой территории вспомнить, как прекрасна и радостна простая мирная жизнь. ',
+	p4: 'Какой праздник без угощения? Семьи с детьми на автофестивале смогут бесплатно отведать бургеры, буррито и прохладительные напитки, а фотографии гостей на фоне мобильного фудтрака «Кухня Z» станут ещё одним приятным подарком на память. ',
+	p5: 'Особое внимание будет уделено безопасности мероприятия. За то, чтобы ничто не нарушило праздничную атмосферу, будет отвечать 88 ОШБР «ЭСПАНЬОЛА», которая обеспечит надлежащий уровень общественной безопасности. ',
+	p6: 'Организаторами городского праздника выступаем мы, благотворительный фонд «Дело Чести», а также 88 ОШБР «ЭСПАНЬОЛА», (https://t.me/spainrus) Ассоциация Автотранспорта Приазовья Министерства молодёжи, спорта и туризма ДНР. Праздник пройдёт при поддержке благотворительного Фонда «Мариуполю Жить» (https://t.me/mariupol_to_live) Максима Харчука и администрации города Мариуполь.',
+}
+]
+---																																																										
+
+<Layout title="Благотворительный фонд Дело Чести" description="Благотворительный фонд Дело Чести">
+	<main>
+		<Banner/>
+	
+		<section class="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="title">
+							<h2>О фонде</h2>
+						</div>
+					</div>
+					<div class="col-12 col-lg-5">
+						<div class="about_img">
+							<img src="/img/about/about.jpg" alt="">
+						</div>
+					</div>
+					<div class="col-12 col-lg-7">
+						<div class="about_description">
+							<h3>Дело Чести</h3>
+							<h5>Благотворительный фонд</h5>
+							<p>
+								Мы, ветераны специальной военной
+операции, приняли решение основать
+благотворительный фонд для прямой помощи
+действующим участникам СВО и ветеранам
+боевых действий, а также их семьям. 
+							</p>
+							<div class="highlighted">
+								Мы обязаны помогать тем, кто рискует
+своей жизнью за Родину.
+							</div>
+							<p>
+								Делу Чести отведена важная роль в оказании мер
+социальной поддержки, реализации общественнополезных инициатив, инвестиций в культурные проекты и
+формировании благоприятной среды для восстановления
+мирной жизни освобожденных территорий.
+							</p>	
+							<button class="btn_details">
+								<a href="/o-fonde">Подробнее о фонде</a>
+							</button>																										
+						</div>
+					</div>
+	
+				</div>
+			</div>
+		</section>
+
+		<section class="socials">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-9">
+						<div class="socials_text">
+							<h3>Вы можете поддержать нас в социальных сетях</h3>
+							<span>Вступайте в наши сообщества и расскажите о нас друзьям</span>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3">
+						<div class="socials_links">
+							<img src="/icons/vk.svg" alt="">
+							
+							<a href="https://t.me/bfdelochesti">
+								<img src="/icons/telegram.svg" alt="">
+							</a>
+							<a href="https://dzen.ru/a/ZnXL51ZIDhkIa1pH">
+								<img src="/icons/zen.svg" alt="">
+							</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<PaymentForm title="Помочь за 1 минуту"/>	
+	<section class="documents" id="documents">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">	
+					<div class="title">
+						<h2>Документы</h2>
+					</div>
+				</div>
+			{documents.map(({id,title,date,link}) => (
+				<Document title={title} date={date} link={link}/>
+			))}			
+			</div>
+		</div>
+	</section>
+	<section class="news">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">	
+					<div class="title">
+						<h2>Новости</h2>
+					</div>
+				</div>
+				{news.map(({id,title,imgUrl,shortText}) => (
+					<NewsCard id={id} title={title} imgUrl={imgUrl} shortText={shortText}/>
+				))}
+			</div>
+		</div>
+	</section>
+
+	</main>
+</Layout>
+
+<style>
+	 
+	.head {
+		margin-top: 100px;
+	}
+
+	.about {
+		text-align: left;
+		margin-bottom: 50px;
+	}
+
+	.about .about_img{
+		width: 100%;
+		height: 600px;
+		overflow: hidden;
+		border-radius: 9px;												
+	}
+
+	.about .about_img img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.about .about_description{
+		
+	}
+
+	.about .about_description .btn_details{
+		padding: 10px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #285347;
+    color: #ffffff;
+    background: #285347;
+    margin-top: 30px;
+    border-radius: 9px;
+	}
+	.about .about_description .btn_details a{
+		text-decoration: none;
+		color: #ffffff;
+	}
+	.about .about_description h3{
+		font-size: 28px;
+		margin-bottom: 15px;
+		font-weight: 600;
+	}
+
+	.about .about_description h5{
+		font-size: 24px;
+		margin-bottom: 40px;
+	}
+
+	.about .about_description p{
+		font-size: 20px;
+		line-height: 26px;
+		margin-bottom: 15px;
+	}
+
+	.about .about_description .highlighted{
+		padding: 15px;
+		font-size: 20px;
+		background-color: #AE2E42;
+		color: #ffffff;
+		margin-bottom: 15px;
+	}
+
+.socials {
+	background-color: #F4EBE1;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.socials .socials_text {}
+.socials .socials_text h3{
+	font-size: 30px;
+	color: #000000;
+	text-align: left;
+}
+.socials .socials_text span{
+	font-size: 20px;
+	color: #4A4A4A;
+}
+.socials .socials_links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.socials .socials_links img{
+	width: 60px;
+	height: 60px;
+}
+
+@media screen and (max-width: 991px) {
+	.socials .socials_links {
+	display: flex;
+	justify-content: space-evenly;
+	width: 70%;
+	margin: 20px auto 0 auto;
+}
+
+
+
+.socials .socials_text span{
+	display: block;
+	text-align: center;
+}
+
+.socials .socials_text h3{
+	text-align: center;
+}
+.about .about_img{
+		height: 500px;
+		margin-bottom: 10px;											
+	}
+	.about .about_description h5{
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+	.about .about_description p{
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom: 12px;
+	}
+  }
+
+
+	@media screen and (max-width: 576px) {
+		.socials {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	.socials .socials_links {
+	display: flex;
+	justify-content: space-evenly;
+	width: 70%;
+	margin: 20px auto 0 auto;
+}
+
+
+.socials .socials_text span{
+	font-size: 16px;
+	display: block;
+	text-align: center;
+}
+
+.socials .socials_text h3{
+	font-size: 20px;
+	text-align: center;
+}
+.about .about_img{
+		height: 400px;
+		margin-bottom: 10px;											
+	}
+	.about .about_description h5{
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+	.about .about_description p{
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom: 12px;
+	}
+  }
+
+
+	@media screen and (max-width: 375px) {
+		.socials {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	.socials .socials_links {
+
+
+	width: 100%;
+	margin: 15px auto 0 auto;
+}
+.socials .socials_links img{
+	width: 50px;
+	height: 50px;
+}
+
+.socials .socials_text span{
+	font-size: 16px;
+	display: block;
+	text-align: center;
+}
+
+.socials .socials_text h3{
+	font-size: 20px;
+	text-align: center;
+}
+.about .about_img{
+		height: 400px;
+		margin-bottom: 10px;											
+	}
+	.about .about_description h5{
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+	.about .about_description p{
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom: 12px;
+	}
+  }
+
+	.documents {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		background-image: url(/img/bg_line.svg);
+    background-repeat: no-repeat;
+    background-position: 46% bottom;
+    background-size: auto 100%;
+		z-index:1;
+	}
+</style>

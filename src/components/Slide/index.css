@@ -1,0 +1,266 @@
+.slide {
+  background: #fafafa;
+  padding-top: 100px;
+  height: 100%;
+  background-image: url(/img/curves.svg);
+  background-repeat: no-repeat;
+  background-position: 0 100px;
+  background-size: auto;
+}
+
+.story_banner {
+  margin-top: 94px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url(/curves.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 center;
+  background-color: #f4ebe1;
+}
+
+.story_banner .story_banner--image {
+  position: relative;
+}
+
+.story_banner .story_banner--image .img {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 8px;
+  background-color: #ffffff;
+  border-radius: 9px;
+}
+
+.story_banner .story_banner--image .img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.story_banner .story_banner--image .donation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.story_banner .story_banner--image .donation_outer {
+  background: #333f48a3;
+  height: 8px;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* .story_banner .story_banner--image .donation_inner {
+  background: #ffa857ff;
+  height: 8px;
+} */
+
+.story_banner .story_banner--description {
+}
+.story_banner--description span {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.story_banner--description h3 {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+.diagnosis {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.description {
+  font-size: 18px;
+  line-height: 25px;
+  padding-right: 50px;
+}
+.action {
+  margin-top: 50px;
+  display: flex;
+}
+.btn_charity {
+  padding: 10px 20px;
+  border: 1px solid #ae2e42;
+  background-color: #ae2e42;
+  font-size: 18px;
+  color: #ffffff;
+  transform: 0.4s ease all;
+  border-radius: 9px;
+  margin-right: 100px;
+}
+.btn_charity a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.btn_charity:hover {
+  background-color: #ae2e42;
+  color: #ffffff;
+}
+
+.btn_detail {
+  padding: 10px 20px;
+  border: 1px solid #285347;
+  background-color: #285347;
+  font-size: 18px;
+  color: #ffffff;
+  transform: 0.4s ease all;
+  border-radius: 9px;
+}
+.btn_detail a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.btn_detail:hover {
+  background-color: #285347;
+  color: #ffffff;
+}
+
+.btn_detail:hover a {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+  .slide {
+    padding-top: 30px;
+  }
+
+  .story_banner--description span {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .story_banner--description h3 {
+    text-align: left;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .diagnosis {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 25px;
+    padding-right: 20px;
+  }
+
+  .action {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .btn_charity {
+    padding: 7px 14px;
+    border: 1px solid #ae2e42;
+    background-color: #ae2e42;
+    font-size: 16px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+    margin-right: 30px;
+  }
+
+  .btn_detail {
+    padding: 7px 14px;
+    border: 1px solid #285347;
+    background-color: #285347;
+    font-size: 16px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+  }
+
+  .btn_detail a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .slide {
+    padding-top: 30px;
+  }
+
+  .story_banner--description span {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .story_banner--description h3 {
+    text-align: left;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .diagnosis {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 25px;
+    padding-right: 10px;
+  }
+
+  .action {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn_charity {
+    padding: 5px 10px;
+    border: 1px solid #ae2e42;
+    background-color: #ae2e42;
+    font-size: 14px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+    margin-right: 20px;
+  }
+
+  .btn_detail {
+    padding: 5px 10px;
+    border: 1px solid #285347;
+    background-color: #285347;
+    font-size: 14px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+  }
+
+  .btn_detail a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffffff;
+  }
+  .slide {
+    padding-top: 20px;
+  }
+
+  .story_banner--description span {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .story_banner--description h3 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .diagnosis {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+    padding-right: 10px;
+  }
+
+  .action {
+    margin-top: 15px;
+  }
+}

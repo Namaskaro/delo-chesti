@@ -1,0 +1,155 @@
+---
+import HelpForm from "../components/HelpForm/HelpForm";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+
+
+
+<Layout title="Получить помощь благотворительный фонд Дело Чести" description="Получить помощь благотворительный фонд Дело Чести">
+  <main>
+    <section class="help">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumbs">
+              <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a class="active" href="/poluchit-pomosch">Получить помощь</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="title">
+              <h1>Получить помощь</h1>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="help_wrapper">
+              <h3>Как получить помощь?</h3>
+              <p>Если вы участник СВО или житель освобождённой территории и вам нужна поддержка, мы готовы её оказать. Напишите нам сообщение, расскажите о своей ситуации, и помощь придёт. </p>
+              <div class="help_act">
+                <button class="help_btn">
+                  <a href="#help">Напишите нам</a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="title">
+              <h2>Кому и чем мы можем помочь?</h2>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="help_item">
+              <div class="help_item_img">
+                <img src="/icons/soldiers.svg" alt="">
+              </div>
+              Бойцам, пострадавшим в результате проведения СВО, а также находящимся в зоне боевых действий, мы готовы предоставить аптечки первой помощи, продукты, вещи первой необходимости, одежду, обувь, амуницию, в том числе по индивидуальному запросу.
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="help_item">
+              <div class="help_item_img">
+                <img src="/icons/wounded.svg" alt="">
+              </div>
+              Тяжелораненым бойцам мы помогаем реабилитироваться и как можно скорее вернуться к обычной жизни, организуя медицинские и социальные программы.
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="help_item">
+              <div class="help_item_img">
+                <img src="/icons/family_care.svg" alt="">
+              </div>
+              Семьи тяжелораненых или погибших участников СВО мы тоже не оставим без поддержки: напишите о своей беде, и мы постараемся облегчить ваше бремя. 
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="help_wrapper">
+              <h3>Зачем это нужно нам?</h3>
+              <p>Оказывая поддержку участникам СВО и их семьям, мы помогаем нашей большой стране как можно скорее одержать Победу. Давайте делать это вместе. Потому что вместе мы – сила. </p>
+              <p>Заполняя заявку, знайте: наша команда читает все письма, ни одно обращение не остаётся без ответа. Поэтому просим писать максимально подробно, чтобы мы сразу понимали, какая именно у помощь вам нужна.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <HelpForm client:load/>
+  </main>
+</Layout>
+
+
+<style>
+  .help {
+    margin-top: 100px;
+  }
+
+  .help_wrapper {
+    box-shadow: 2px 4px 8px #223c5033;
+    border-radius: 9px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .help_wrapper p{
+    font-size: 18px;
+    color: #666a6d;
+    line-height: 26px;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  .help_wrapper .help_act{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .help_wrapper .help_act .help_btn{
+    padding: 10px 20px;
+    outline: none;
+    cursor: pointer;
+    background: #285347;
+    color: #ffffff;
+    border: 1px solid #285347;
+    border-radius: 9px;
+  }
+
+  .help_wrapper .help_act .help_btn a{
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .help_item {
+    position: relative;
+   
+ 
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #666a6d;
+  }
+
+  .help_item .help_item_img {
+  
+   margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #AE2E42;
+  }
+  .help_item .help_item_img img{
+    width: 90px;
+    height: 90px;
+    color: #ffffff;
+}
+
+.help_item .help_item_img svg{
+   fill: #ffffff;
+}
+</style>

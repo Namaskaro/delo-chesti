@@ -1,0 +1,9 @@
+.add_to_cart {
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid #285347;
+  color: #ffffff;
+  background: #285347;
+  margin-top: 10px;
+  border-radius: 9px;
+}

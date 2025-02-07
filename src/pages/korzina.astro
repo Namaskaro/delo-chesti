@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cart from '../components/Cart/Cart'
+---
+
+
+
+<Layout title="Корзина товаров" description="Корзина товаров">
+<div class="main">
+  <section class="cart">
+    <div class="container">
+      <div class="row">
+        <Cart client:load/>
+      </div>
+    </div>
+  </section>
+</div>
+</Layout>
+
+<style>
+  .cart {
+    margin-top: 100px;
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import PaymentForm from "../components/PaymentForm.astro";
+import Steps from "../components/Steps/Steps";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+
+
+
+
+<Layout title="Как стать благотворителем фонда Дело Чести" description="Как стать благотворителем фонда Дело Чести">
+<main>
+  <section class="charity">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs">
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a class="active" href="/blagotvoritelyam">Стать благотворителем</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="title">
+            <h1>Как стать благотворителем?</h1>
+          </div>
+        </div>
+        <div class="col-12">
+          <Steps client:load/>
+        </div>
+        <div class="col-12">
+          <div class="charity_description">
+            
+            <h3>Зачем благотворительность – бизнесу?   </h3>
+            <p>Благотворительность для бизнеса – вопрос репутационный. Компании, которые открыто помогают благотворительным фондам, обладают дополнительной привлекательностью в глазах соискателей и вносят неоценимый вклад в общее дело. Компания, отдающая часть дохода на благотворительные цели, получает: </p>
+            <ul>
+              <li>положительный имидж </li>
+              <li>вовлеченность в общее дело</li>
+              <li>мощный командный дух</li>
+            </ul>
+            <p>Любая благотворительность – это работа в интересах нашей большой страны. Прозрачность отчислений и готовность трудиться во благо Родины характеризуют занимающиеся благотворительностью компании как надёжные, придерживающиеся традиционных общечеловеческих ценностей. А значит, всеми силами приближающие Победу России</p>
+            <h3>Какую сумму пожертвовать?</h3>
+            <p>Любую. Для фонда важны каждые десять рублей: они пойдут на покупку перевязочных материалов, одежды и прочих предметов первой необходимости. Маленьких платежей не существует – каждый рубль идёт на важное и нужное дело. </p>
+            <h3>Почему автоплатёж предпочтительнее? </h3>
+            <p>Ритм жизни – в тылу и на войне – часто не оставляет человеку времени даже на чашку кофе, выпитую в одиночестве и в тишине. Неудивительно, что забыть можно обо всём на свете. Однако забывать творить добрые дела нельзя. </p>
+            <p>Оформив автоплатёж – даже 100 рублей в месяц – вы спасёте от боли, голода и холода не одного бойца. Вместе мы – сила, вместе мы – победим. </p>
+            <p>Если у вас остались вопросы, пишите нам: мы подробно ответим на каждый, предоставим документы и расскажем о нашей миссии. Задача нашего фонда – помогать открыто и с широкой душой. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <PaymentForm title="Помочь"/>
+</main>
+</Layout>
+
+
+<style>
+  .charity {
+    margin-top: 100px;
+    
+  }
+
+  .charity .charity_description {
+    box-shadow: 2px 4px 8px #223c5033;
+    border-radius: 9px;
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+
+  .charity .charity_description h3{
+
+}
+.charity .charity_description ul{
+  padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.charity .charity_description ul li{
+  font-size: 18px;
+    padding-left: 25px;
+    color: #666a6d;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.charity .charity_description ul li::before{
+  position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+    color: #AE2E42;
+    background-image: url(/icons/chevron-right.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    text-align: left;
+}
+
+.charity .charity_description p{
+  font-size: 18px;
+    color: #666a6d;
+    line-height: 26px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+</style>

@@ -1,0 +1,80 @@
+---
+const {title,date,link} = Astro.props
+---
+
+
+
+<div class="col-12 col-md-6 col-lg-2">
+  <div class="document">
+    <div class="document_icon">
+      <div class="document_icon_wrapper">
+        <i class="ri-file-pdf-2-line"></i>
+      </div>
+    </div>
+    
+    <div class="document_title">
+      <a href={link}>{title}</a>
+    </div>
+    <div class="date">
+      {date}
+    </div>
+  </div>
+</div>
+
+<style>
+  .document {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: 2px 4px 8px #223c5033;
+    border-radius: 9px;
+   margin-bottom: 25px;
+  }
+
+  .document .document_icon {
+   
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .document .document_icon .document_icon_wrapper{
+    background: #f7f7f7;
+    padding: 10px;
+    box-shadow: 2px 4px 4px #223c5033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .document i {
+    font-size: 30px;
+    color: #AE2E42;
+  }
+
+  .document .document_title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 80px;
+  }
+
+  .document .document_title a {
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    text-align: left;
+    text-decoration: none;
+    
+  }
+  .document .document_title a:hover {
+    color: #AE2E42;
+  }
+
+  .document .date {
+    font-size: 14px;
+    color: #666a6d;
+    text-align: left;
+    margin-top: 20px;
+  }
+</style>

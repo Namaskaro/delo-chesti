@@ -1,0 +1,490 @@
+---
+import DonationScale from '../../components/DonationScale/DonationScale';
+import PaymentForm from '../../components/PaymentForm.astro';
+import HelpForm from '../../components/HelpForm/HelpForm'
+import Layout from '../../layouts/Layout.astro';
+import Table from '../../components/Table/Table'
+
+
+const { slug } = Astro.params;
+
+export function getStaticPaths() {
+  return [
+    {params: {slug: 'sbor-dlya-pervogo-dobrovolcheskogo-armeyskogo-korpusa'}},
+    {params: {slug: 'poprosit-pomoschi'}},
+
+  ]
+}
+const stories = [
+{
+    age: 49,
+    programm: 'Благотворительная программа «Помощь СВО»*.',
+    description: 'Мы объявляем сбор для 1 Добровольческого корпуса ВС РФ, бойцы которого обратились в фонд за помощью. Добровольцы проходят службу на линии боевого соприкосновения на Донецком направлении. В данный момент корпус нуждается в оборудовании и снаряжении для осуществления эффективной работы в зоне СВО.',
+    p1: 'Если у вас есть возможность оказать помощь нашему Фонду и фронту для решения вопросов своевременного приобретения оборудования и снаряжения бойцов, находящихся в это непростое время в зоне СВО, существует несколько вариантов:',
+    financialTitle: 'ФИНАНСОВАЯ ПОДДЕРЖКА',
+    financialp1: 'Если вы готовы оказать безвозмездную помощь, то вы можете перечислить пожертвование прямо сейчас ',
+    financialp2: 'Или по рекизитам фонда указав в наименовании платежа «Благотворительная помощь на сбор по заявке № 1.»',   
+    requisites: [
+    'Реквизиты ПСБ:',
+    'Наименование банка:  Дополнительный офис «Мариупольский-20» Донецкого ф-ла ПАО «Промсвязьбанк»',
+    'БИК банка: 042157106  ',
+    'Расчетный счет: 40703810609300000873',
+    'Корреспондентский счет:  30101810400000000555'
+    ],
+    informationTitle: 'ИНФОРМАЦИОННАЯ ПОДДЕРЖКА',
+    informationalDescription: 'Нам очень важна помощь по распространению информации о нашем фонде, чтобы как можно больше людей, которым нужна та или иная помощь, узнали, как ее получить.',
+    note: '*Программа разработана в соответствии с требованиями и положениями Конституции Российской Федерации, Гражданского кодекса Российской Федерации, Федеральных законов: «О некоммерческих организациях» № 7-ФЗ от 12.01.1996 г., «О благотворительной деятельности и благотворительных организациях» № 135-ФЗ от 11.08.1995 г., иных нормативных правовых актов Российской Федерации и Уставом БФ «Дело Чести».',
+    title: 'Благотворительная программа «Помощь СВО»*.',
+    imgSrc: '/img/stories/vac_1/1.png',
+    shortDesc: 'Последствия тяжелой сочетанной травмы',
+    needToCollect: 4665150,
+    collectedSum: 5100,
+    slug: 'sbor-dlya-pervogo-dobrovolcheskogo-armeyskogo-korpusa',
+    formType: 'charity',
+    tableData: [
+      {name: 'Плитник 6094 Стандарт Мультикам', amount: 15, price: 35000, totalAmount: 525000},
+      {name: 'РПС "Урбан" (Мультикам, M)', amount: 15, price: 3900, totalAmount: 58500},
+      {name: 'Защита шеи в сборе Мультик М', amount: 15, price: 14240, totalAmount: 213600},
+      {name: 'Защита плеч в сборе Мультикам', amount: 15, price: 13210, totalAmount: 213600},
+      {name: 'Напашник увеличеный в сборе Мультикам', amount: 15, price: 10100, totalAmount: 151500},
+      {name: 'Рюкзак тактический "Морпех" (Мультикам)', amount: 15, price: 13500, totalAmount: 202500},
+      {name: 'Транспортная сумка/рюкзак WP (Британия) (Мультикам)', amount: 15, price: 16000, totalAmount: 240000},
+      {name: 'Отрывной подсумок ПК (каркасный) (Мультикам)', amount: 6, price: 3900, totalAmount: 23400},
+      {name: 'Аптечка каркасная (Мультикам)', amount: 15, price: 3500, totalAmount: 52500},
+      {name: '"Шлем Ops Core (материал - "Тварон") - сертификат (Китай +)', amount: 15, price: 25000, totalAmount: 375000},
+      {name: 'Плиты SAPI бр5 комплект', amount: 30, price: 28000, totalAmount: 840000},
+      {name: 'ПРИКЛАД ТЕЛЕСКОПИЧЕСКИЙ ПТ-1', amount: 15, price: 31000, totalAmount: 465000},
+      {name: 'MS Tech 24 х 1,5 (м) (банка) на АК - 74', amount: 15, price: 20000, totalAmount: 300000},
+      {name: 'КОЛЛИМАТОРНЫЙ ПРИЦЕЛ "ВЗОР-5Т"', amount: 15, price: 33000, totalAmount: 495000},
+      {name: 'УВЕЛИЧИТЕЛЬ «ВЗОР»', amount: 15, price: 35000, totalAmount: 525000},
+    ]
+  },
+  {
+    age: 26,
+    description: ' Наша большая страна готова помочь своим гражданам, находящимся на передовой и на освобождённых территориях. Вернуться к мирной жизни — наша главная цель, поэтому мы должны держаться вместе. Оставьте заявку на получение помощи – мы с вами свяжемся и постараемся подставить крепкое дружеское плечо.',
+    location: 'г.Спасск, Пензенская обл.',
+    title: 'Просить о помощи в трудной ситуации не стыдно.',
+    imgSrc: '/img/stories/donate/1.jpg',
+    shortDesc: 'Просить о помощи в трудной ситуации не стыдно.',
+    needToCollect: 0,
+    collectedSum: 0,
+    slug: 'poprosit-pomoschi',
+    formType: 'help'
+  }
+]
+
+const story = stories.find((story) => story.slug === slug)
+---
+
+
+<Layout title={story?.description} description={story?.description}>
+  <main>
+    <section class="story_banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="story_banner--description">
+              <!-- <span>
+                {story?.age} лет, {story?.location}
+              </span> -->
+              <h3>{story?.title}</h3>
+              <!-- <div class="diagnosis">
+                <strong>Диагноз:</strong>
+                <br />
+                {story?.shortDesc}
+              </div> -->
+              <div class="description">{story?.description}</div>
+              {story?.p1 && (
+              
+                <div class="variants">
+                  <p>
+                    Если у вас есть возможность оказать помощь нашему Фонду и фронту для решения вопросов своевременного приобретения оборудования и снаряжения бойцов, находящихся в это непростое время в зоне СВО, существует несколько вариантов:
+                  </p>
+    
+                  <h3>{story.financialTitle}</h3>
+                  <p>
+                    {story.financialp1}
+                  </p>
+                  {story?.formType === 'charity' && <button class="btn_charity">
+                      <a href="#donate">Пожертвовать</a>
+                    </button>}
+                  <p class="mt-3">
+                    {story.financialp2}
+                  </p>
+                  <ul>
+                    {story.requisites.map((req) => (
+                      <li class="requisites_list">
+                        {req}
+                      </li>
+                    ))}
+                  </ul>
+                  <h3>{story.informationTitle}</h3>
+                  <p>{story.informationalDescription}</p>
+                  <p class="note">
+                    {story.note}
+                  </p>
+                </div>
+              
+              )}
+              {!story?.financialTitle && (
+                              <div class="action">
+                
+                {story?.formType === 'help' && <button class="btn_charity">
+                  <a href="#help">Получить помощь</a>
+                </button>}
+                {story?.formType === 'charity' && <button class="btn_charity">
+                  <a href="#donate">Пожертвовать</a>
+                </button>}
+              </div>
+              )}
+
+            </div>
+          </div>
+          <div class="col-6 d-none d-lg-block">
+            <DonationScale imgSrc={story?.imgSrc} collected={story?.collectedSum} need={story?.needToCollect} />
+          </div>
+          {story!.tableData && (
+            <div class="col-12 col-lg-8 mx-auto">
+              <div class="title">
+                <h2>Чем поможем</h2>
+              </div>
+              
+            <Table data={story!.tableData}/>
+          </div>
+          )}
+          
+        </div>
+      </div>
+    </section>
+    {story?.formType == 'charity' && <PaymentForm id="donate" title={story?.title} />}
+    {/* 
+// @ts-ignore */}
+    {story?.formType == 'help' &&  <HelpForm id="help" client:load/>}
+    
+    
+  </main>
+</Layout>
+
+<style>
+  .story_banner {
+    margin-top: 94px;
+    height: fit-content;
+    width: 100%;
+    display: block;
+    /* overflow: hidden; */
+  }
+
+
+.story_banner {
+  margin-top: 94px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url(/img/curves.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 top;
+  background-color: #fafafa;
+}
+
+.story_banner .story_banner--image {
+  position: relative;
+}
+
+.story_banner .story_banner--image .img {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 8px;
+  background-color: #ffffff;
+  border-radius: 9px;
+}
+
+.story_banner .story_banner--image .img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.story_banner .story_banner--image .donation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.story_banner .story_banner--image .donation_outer {
+  background: #333f48a3;
+  height: 8px;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+
+.story_banner .story_banner--description {
+}
+.story_banner--description span {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.story_banner--description h3 {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+.diagnosis {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.description {
+  font-size: 18px;
+  line-height: 25px;
+  padding-right: 50px;
+}
+.action {
+  margin-top: 50px;
+  display: flex;
+}
+.btn_charity {
+  padding: 10px 20px;
+  border: 1px solid #ae2e42;
+  background-color: #ae2e42;
+  font-size: 18px;
+  color: #ffffff;
+  transform: 0.4s ease all;
+  border-radius: 9px;
+  margin-right: 100px;
+}
+.btn_charity a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.btn_charity:hover {
+  background-color: #ae2e42;
+  color: #ffffff;
+}
+
+.btn_detail {
+  padding: 10px 20px;
+  border: 1px solid #285347;
+  background-color: #285347;
+  font-size: 18px;
+  color: #ffffff;
+  transform: 0.4s ease all;
+  border-radius: 9px;
+}
+.btn_detail a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.btn_detail:hover {
+  background-color: #285347;
+  color: #ffffff;
+}
+
+.btn_detail:hover a {
+  color: #ffffff;
+}
+
+.variants {
+  margin-top: 30px; 
+  background-image: url(/img/line-long.svg);
+  background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 center;
+}
+
+.variants ul {
+padding-left: 0;
+}
+
+.variants .note {
+  font-size: 14px;
+}
+
+.variants ul .requisites_list{
+  list-style: none;
+}
+
+.variants p{
+  font-size: 18px;
+  line-height: 25px;
+  
+}
+
+.variants h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #285347;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+  .variants {
+    margin-top: 50px;
+  font-size: 18px;
+  line-height: 25px;
+  background-image: url(/img/line-long.svg);
+  background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 center;
+}
+}
+
+@media screen and (max-width: 576px) {
+  .slide {
+    padding-top: 30px;
+  }
+
+  .story_banner--description span {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .story_banner--description h3 {
+    text-align: left;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .diagnosis {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 25px;
+    padding-right: 20px;
+  }
+
+  .action {
+    margin-top: 20px;
+  }
+
+  .variants p{
+  font-size: 16px;
+  line-height: 25px;
+  padding-right: 20px;
+  
+}
+}
+
+@media screen and (max-width: 480px) {
+  .btn_charity {
+    padding: 7px 14px;
+    border: 1px solid #ae2e42;
+    background-color: #ae2e42;
+    font-size: 16px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+    margin-right: 30px;
+  }
+
+  .btn_detail {
+    padding: 7px 14px;
+    border: 1px solid #285347;
+    background-color: #285347;
+    font-size: 16px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+  }
+
+  .btn_detail a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .slide {
+    padding-top: 30px;
+  }
+
+  .story_banner--description span {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .story_banner--description h3 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .diagnosis {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 25px;
+    padding-right: 10px;
+  }
+
+  .action {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn_charity {
+    padding: 5px 10px;
+    border: 1px solid #ae2e42;
+    background-color: #ae2e42;
+    font-size: 14px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+    margin-right: 20px;
+  }
+
+  .btn_detail {
+    padding: 5px 10px;
+    border: 1px solid #285347;
+    background-color: #285347;
+    font-size: 14px;
+    color: #ffffff;
+    transform: 0.4s ease all;
+    border-radius: 9px;
+  }
+
+  .btn_detail a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffffff;
+  }
+  .slide {
+    padding-top: 20px;
+  }
+
+  .story_banner--description span {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .story_banner--description h3 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .diagnosis {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+    padding-right: 10px;
+  }
+
+  .action {
+    margin-top: 15px;
+  }
+
+  .story_banner--description h3 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+</style>

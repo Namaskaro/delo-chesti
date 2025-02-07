@@ -1,0 +1,199 @@
+---
+---
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 col-lg-4 col-12">
+        <div class="footer_info">
+          <div class="footer_logo">
+            <img src="/full_logo.svg" alt="">
+          </div>
+          <!-- <button class="btn_donate">Пожертвовать</button> -->
+        </div>
+        
+      </div>
+      <div class="col-md-6 col-lg-4 col-12">
+        <div class="footer_menu">
+          <div class="footer_menu_heading">
+            <h5>Меню</h5>
+          </div>
+          <ul>
+            <li><a href="/o-fonde">О фонде</a></li>
+            
+            <li><a href="/blagotvoritelyam">Стать благотворителем</a></li>
+            <li><a href="/poluchit-pomosch">Получить помощь</a></li>
+            <li><a href="/dokumenti">Документы</a></li>
+            <li><a href="/kontakti">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 col-12">
+        <div class="footer_contacts">
+          <div class="footer_contacts_heading">
+            <h5>Контакты</h5>
+          </div>
+          <div class="contacts_unit">
+            <i class="ri-map-pin-line"></i>
+            <span>Российская Федерация, Донецкая Народная Республика, городской округ Мариуполь, город Мариуполь, ул. Краснофлотская, д. 196, оф. 1</span>
+          </div>
+          <div class="contacts_unit">
+            <i class="ri-mail-line"></i>
+            <a href="mailto:bf@dchesti.ru">bf@dchesti.ru</a>
+          </div>
+          <div class="contacts_unit">
+            <i class="ri-phone-line"></i>
+            <a href="tel:+79495000790">+7 949 500 0790</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="footer_bottom">
+          © 2024 Благотворительный фонд Дело Чести. Все права защищены.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</footer>
+
+
+<style>
+  .footer {
+  background-color:#F4EBE1;
+  padding: 30px 0 0 0;
+  box-shadow: 0 -5px 5px -5px hsla(220, 32%, 8%, 0.3);
+
+}
+
+
+.footer .footer_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.footer .footer_info .footer_logo{
+  overflow: hidden;
+  width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.footer .footer_info .footer_logo img{
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.footer .footer_info .btn_donate{
+  padding: 10px 20px;
+  outline: none;
+  cursor: pointer;
+  background: #285347;
+  color: #ffffff;
+  border: 1px solid #285347;
+  border-radius: 9px;
+}
+
+.footer .footer_bottom {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  color: #285347;
+  border-top: 1px solid #285347;
+}
+
+.footer .footer_menu {}
+.footer .footer_menu .footer_menu_heading{
+  text-align: center;
+}
+.footer .footer_menu .footer_menu_heading h5{
+  font-size: 24px;
+  color: #285347;
+}
+.footer .footer_menu ul{
+  list-style: none;
+  text-align: left;
+ 
+}
+.footer .footer_menu ul li{}                        
+.footer .footer_menu ul li a{
+  color: #285347;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.footer_contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_contacts .contacts_unit {
+  width: 100%;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer_contacts .contacts_unit i {
+  font-size: 20px;
+  color: #285347;
+  margin-right: 8px;
+}
+.footer .footer_contacts .footer_contacts_heading{
+  text-align: center;
+}
+.footer .footer_contacts .footer_contacts_heading h5{
+  font-size: 24px;
+  color: #285347;
+}
+
+.footer_contacts .contacts_unit span {
+  color: #285347;
+}
+.footer_contacts .contacts_unit a {
+  color: #285347;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer .footer_info {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .footer_contacts {
+    margin-top: 20px;
+  }
+  .footer_contacts .contacts_unit {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer_contacts .contacts_unit i {
+  font-size: 30px;
+  color: #285347;
+  margin-right: 0;
+}
+.footer .footer_menu ul{
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+}
+</style>

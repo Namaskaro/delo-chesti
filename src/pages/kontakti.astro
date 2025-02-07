@@ -1,0 +1,144 @@
+---
+import ContactsLayout from "../layouts/ContactsLayout.astro";
+
+---
+
+
+<ContactsLayout title="Контакты" description="Контакты">
+  <main>
+    <section class="contacts" id="contacts">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="breadcrumbs">
+							<ul>
+								<li><a href="/">Главная</a></li>
+								<li><a class="active" href="/kontakti">Контакты</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+					<div class="row ">
+							<div class="col-12">
+									<div class="title">
+											<h2>Контакты</h2>
+									</div>
+									
+							</div>
+					</div>
+					<div class="row">
+							<div class="col-12 col-lg-3 col-md-6">
+									<div class="contacts-item">
+                    <i class="ri-phone-line"></i><span class="contact-text">Телефон</span> 
+													<span><a href="tel:+79495000790">+7 949 500 0790</a></span>
+													</div>
+							</div>
+							<div class="col-12 col-lg-3 col-md-6">
+									<div class="contacts-item">
+                    <i class="ri-map-pin-line"></i> <span class="contact-text">Адрес</span> <span > Российская Федерация, Донецкая Народная
+                        Республика, городской округ Мариуполь, город
+                        Мариуполь, ул. Краснофлотская, д. 196, оф. 1</span> </div>
+							</div>
+							<div class="col-12 col-lg-3 col-md-6">
+									<div class="contacts-item">
+                    <i class="ri-mail-send-line"></i> <span class="contact-text">Почта</span> <span >               bf@dchesti.ru            </span> </div>
+							</div>
+							<div class="col-12 col-lg-3 col-md-6">
+									<div class="social-item">
+                    <i class="ri-message-2-line"></i>
+                    <span class="contact-text">Соцсети</span>
+									<div class="social_item_img">
+                    <img src="/icons/vk.svg" alt="">
+                    <img src="/icons/telegram.svg" alt="">
+                    <img src="/icons/zen.svg" alt="">
+                  </div>
+										
+									
+			
+																							 
+													</div>
+							</div>
+					</div>
+			</div>
+	</section>
+    <section class="map">
+      <div class="container-fluid">
+          <div class="row">
+          
+              <div class="map" id="map"></div>
+          </div>
+          </div>
+      </section>
+  </main>
+</ContactsLayout>
+
+
+
+<style>
+  .contacts {
+    margin-top: 94px;
+    background-color: #fff;
+  }
+  .map {
+    width: 100%;
+    height: 600px;
+  }
+  .contacts-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .contacts-item i {
+    font-size: 40px;
+    color: #285347;
+  }
+  .contacts-item span {
+    font-size: 20px;
+  
+  }
+  .contacts-item span a {
+    font-size: 20px;
+    color: #000000;
+  }
+  .social-item  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .social-item  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-item  i {
+    font-size: 40px;
+    color: #285347;
+  }
+  .social-item span {
+    font-size: 20px;
+  }
+  .social-item span a {
+    font-size: 20px;
+    color: #000000;
+  }
+  .social-item  .contact-text{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  .contacts-item .contact-text{
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  </style>													

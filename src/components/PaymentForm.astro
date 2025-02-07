@@ -1,0 +1,259 @@
+---
+const {title} = Astro.props
+---
+
+
+
+<section class="payment" id="donate">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="formDescription">
+          <h2>{title}</h2>
+        </div>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="formWrapper">
+          <form class="payform-tinkoff" name="payform-tinkoff" id="payform-tinkoff" >
+            <div class="input_group">
+              <input class="payform-tinkoff-row" type="number" placeholder="Сумма пожертвования" name="amount" required>
+              <label class="label" for="name">
+                Сумма пожертвования
+              </label>
+            </div>
+            <div class="input_group">
+              <input class="payform-tinkoff-row" type="text" placeholder="Имя" name="name">
+              <label class="label" for="name">
+                Имя
+              </label>
+            </div>
+            <div class="input_group">
+              <input class="payform-tinkoff-row" type="email" placeholder="E-mail" name="email" required>
+              <label class="label" for="name">
+                Email
+              </label>
+            </div>
+            <input class="payform-tinkoff-row" type="hidden" name="terminalkey" value="1719234529899">
+            <input class="payform-tinkoff-row" type="hidden" name="frame" value="false">
+            <input class="payform-tinkoff-row" type="hidden" name="language" value="ru">
+            <input class="payform-tinkoff-row" type="hidden" name="receipt" value="">
+            
+            <input class="payform-tinkoff-row" type="hidden" placeholder="Номер заказа" name="order">
+            <input class="payform-tinkoff-row" type="hidden" placeholder="Описание заказа" name="description">
+           
+            
+            <input class="payform-tinkoff-row" type="hidden" placeholder="Контактный телефон" name="phone">
+            <p>Нажимая на кнопку "Оплатить" вы соглашаетесь с <a href="/oferta">публичной офертой</a> и с условиями использования <a href="/personalniye-dannie">политики конфиденциальности</a></p>
+            <input class="payform-tinkoff-row payform-tinkoff-btn" type="submit" value="Оплатить">
+            
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .payform-tinkoff p {
+    font-size: 14px;
+  }
+  .payform-tinkoff p a {
+    color: #AE2E42;
+  }
+  .payform-tinkoff-row {
+  height: 50px;
+  font-size: 16px;
+  padding: 11px 15px;
+  border-radius: 4px;
+  border: 1px solid #cbd8e3;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* .input:focus {
+  outline: none;
+  border: 2px solid blue;
+} */
+
+.payform-tinkoff-row:focus ~ .label {
+  color: blue;
+  transform: scale(0.75) translate(-13px, -30px);
+}
+
+.payform-tinkoff-row:not(:label-shown).payform-tinkoff-row:not(:focus) + .label {
+  transform: scale(0.75) translateY(-36px) translateX(-15%);
+  color: #cbd8e3;
+  transition: 0.2s ease;
+}
+
+.payform-tinkoff-row:focus {
+  border-color: #0088ff;
+}
+
+.payform-tinkoff-row:focus + .label {
+  transform: scale(0.75) translateY(-36px) translateX(-15%);
+  color: #0088ff;
+  transition: 0.2s ease;
+}
+
+.payform-tinkoff-row:invalid:not(:label-shown) {
+  transition: 0.2s ease;
+  border-color: #f52c5c;
+}
+
+.payform-tinkoff-row:invalid:not(:placeholder-shown) + .label {
+  transition: 0.2s ease;
+  color: #f52c5c;
+}
+.payform-tinkoff-row:invalid:not(:placeholder-shown).payform-tinkoff-row:not(:focus) + .label {
+  transform: scale(0.75) translateY(-36px) translateX(-15%);
+  color: #f52c5c;
+  transition: 0.2s ease;
+}
+
+.label {
+  pointer-events: none;
+  position: absolute;
+  font-weight: 400;
+  top: 13px;
+  left: 8px;
+  padding: 0 8px;
+  background-color: white;
+  border-radius: 5px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: grey;
+}
+
+.input_group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.placeholder {
+  pointer-events: none;
+  position: absolute;
+  font-weight: 400;
+  top: 72px;
+  left: 50px;
+  padding: 0 8px;
+  background-color: white;
+  border-radius: 5px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: grey;
+}
+
+
+.payment {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #fafafa;
+}
+
+.formWrapper {
+  background: #ffffff;
+  border-radius: 9px;
+  padding: 30px;
+  box-shadow: 2px 4px 8px #223c5033;
+}
+
+.payform-tinkoff {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.payform-tinkoff-btn {
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #285347;
+  color: #ffffff;
+  background: #285347;
+  margin-top: 30px;
+  border-radius: 9px;
+}
+
+/* .btn:disabled {
+  background: #cbd8e3;
+} */
+
+.formDescription {
+  text-align: center;
+}
+
+.error {
+  font-size: 14px;
+  color: red;
+}
+
+.checkbox {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+
+  accent-color: green;
+}
+
+.label_checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.label_checkbox a {
+  color: green;
+  margin-left: 3px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.tabs li {
+  display: flex;
+  flex-basis: 45%;
+  max-width: 50%;
+  background-color: rgba(220, 220, 220, 0.9);
+  color: #000000;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.tabs li.active {
+  background-color: rgba(40, 83, 71, 1);
+  color: #ffffff;
+}
+
+.active {
+  background-color: rgba(40, 83, 71, 1);
+  color: #ffffff;
+}
+
+.payform-tinkoff-row::-webkit-outer-spin-button,
+.payform-tinkoff-row::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+@media screen and (max-width: 991px) {
+  .formDescription h2{
+  font-size: 24px;
+}
+}
+
+@media screen and (max-width: 576px) {
+  .formDescription h2{
+  font-size: 20px;
+}
+}
+</style>

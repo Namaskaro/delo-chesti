@@ -1,0 +1,133 @@
+---
+import GalleryItem from '../../components/GalleryItem.astro';
+import Layout from '../../layouts/Layout.astro';
+import Fancybox from '../../components/Gallery/Fancybox'
+
+const { id } = Astro.params;
+
+export function getStaticPaths() {
+  return [
+    {params: {id: 1}},
+    
+
+  ]
+}
+const news = [
+	{id:1, 
+		imgUrl: '/img/news/news_1.jpg',
+		title: 'На всех скоростях – в новую жизнь!', 
+		shortText: '30 июня в Мариуполе состоится благотворительный автомобильный фестиваль «Азовский дрифт».',
+	p1: '30 июня в Мариуполе состоится благотворительный автомобильный фестиваль «Азовский дрифт». В городе, где активно восстанавливается жизнь, запланирован драйвовый праздник для взрослых и детей. ',
+	p2: 'Малыши и взрослые получат уникальную возможность увидеть автопробег и показательный демонстрационный заезд модифицированных спортивных автомобилей, сфотографироваться на их фоне, а также в неформальной обстановке пообщаться с экспертами. ',
+	p3: 'Основная цель мероприятия — помочь жителям с таким трудом освобождённой территории вспомнить, как прекрасна и радостна простая мирная жизнь. ',
+	p4: 'Какой праздник без угощения? Семьи с детьми на автофестивале смогут бесплатно отведать бургеры, буррито и прохладительные напитки, а фотографии гостей на фоне мобильного фудтрака «Кухня Z» станут ещё одним приятным подарком на память. ',
+	p5: 'Особое внимание будет уделено безопасности мероприятия. За то, чтобы ничто не нарушило праздничную атмосферу, будет отвечать 88 ОШБР «ЭСПАНЬОЛА», которая обеспечит надлежащий уровень общественной безопасности. ',
+	p6: 'Организаторами городского праздника выступаем мы, благотворительный фонд «Дело Чести», а также 88 ОШБР «ЭСПАНЬОЛА», Ассоциация Автотранспорта Приазовья Министерства молодёжи, спорта и туризма ДНР. Праздник пройдёт при поддержке благотворительного Фонда «Мариуполю Жить» Максима Харчука и администрации города Мариуполь.',
+  videoUrl: '/video/news/drift.mp4',
+  gallery: [
+    '/img/news/1.jpg',
+    '/img/news/2.jpg',
+    '/img/news/3.jpg',
+    '/img/news/4.jpg',
+    '/img/news/5.jpg',
+    '/img/news/6.jpg',
+    '/img/news/7.jpg',
+    '/img/news/8.jpg',
+  ]
+}
+]
+
+const post = news.find((post) => post.id == id)
+---
+
+<Layout title={post?.title} description={post?.title}>
+  <main>
+    <section class="news_details">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="breadcrumbs">
+              <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/novosti">Новости</a></li>
+                <li><a class="active" href="`/novosti/${id}`">{post?.title}</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="title">
+              <h1>{post?.title}</h1>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="news_main_img">
+              <img src={post?.imgUrl} alt="" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="news_text">
+              <p>{post?.p1}</p>
+              <p>{post?.p2}</p>
+              <p>{post?.p3}</p>
+              <p>{post?.p4}</p>
+              <p>{post?.p5}</p>
+              <p>{post?.p6}</p>
+            </div>
+          </div>
+          <div class="col-12">
+            <Fancybox
+        client:only="react"
+    options={{
+      Carousel: {
+        infinite: false,
+      },
+      Thumbs: false,
+    }}
+  >
+  {post?.gallery.map(item => (
+    <GalleryItem image={item}/>
+  ))}
+  
+  </Fancybox>
+          </div>                                              
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .news_details {
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+
+  .news_main_img {
+    padding: 8px;
+    border-radius: 9px;
+    box-shadow: 2px 4px 8px #223c5033;
+    overflow: hidden;
+    height: 620px;
+    margin-bottom: 20px;
+  }
+
+  .news_main_img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+  }
+
+  .news_text {
+    padding: 20px;
+    border-radius: 9px;
+    box-shadow: 2px 4px 8px #223c5033;
+  }
+  .news_text p {
+    font-size: 18px;
+    color: #666a6d;
+    line-height: 26px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+</style>

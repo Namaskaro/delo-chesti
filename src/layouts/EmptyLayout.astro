@@ -1,0 +1,114 @@
+---
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+  description: string;
+}
+
+const { title } = Astro.props;
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'remixicon/fonts/remixicon.css'   
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="yandex-verification" content="a0491486021eb2c4" />
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(97720622, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/97720622" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+		<title>{title}</title>
+	</head>
+	<body>
+        <Header/>
+		<slot />
+<Footer/>
+
+        <script>
+                   const showMenu = (toggleId:any, navId:any) =>{
+   const toggle = document.getElementById(toggleId),
+         nav = document.getElementById(navId)
+
+   toggle?.addEventListener('click', () =>{
+       // Add show-menu class to nav menu
+       nav?.classList.toggle('show-menu')
+
+       // Add show-icon to show and hide the menu icon
+       toggle.classList.toggle('show-icon')
+   })
+}
+
+showMenu('nav-toggle','nav-menu')
+        </script>
+	</body>
+</html>
+<style is:global>
+	:root {
+        --white-color:  #F4EBE1;
+        --red-color: #AE2E42;
+        --green-color: #285347;
+        --gray-color: #4A4A4A;
+
+        --section-margin-x: 30px;
+    }
+
+    body {
+      font-family: "PT Sans", sans-serif;
+    }
+    .breadcrumbs {
+      text-align: left;
+  /* padding: 15px 20px 15px 20px; */
+}
+
+.breadcrumbs ul {
+  list-style: none;
+ 
+  border-radius: 10px;
+  margin-bottom: 0;
+  padding: 10px;
+}
+.breadcrumbs ul li{
+  display: inline;                                                                                                                                                  
+}
+.breadcrumbs ul li + li::before{
+  /* padding: 10px; */
+  color:#7D8597;
+	font-weight: 400;
+  content: '➝';
+  font-size: 1rem;                                                                                                                                              
+}
+.breadcrumbs ul li a{
+  font-size: 15px;
+  color: #666a6d;
+  text-decoration: none;
+  margin: 0px 10px;
+}
+.breadcrumbs ul li a.active{
+  color: #AE2E42;
+}
+.breadcrumbs ul li a:hover{
+  
+  color: #AE2E42;
+}
+</style>

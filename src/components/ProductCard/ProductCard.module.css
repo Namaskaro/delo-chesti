@@ -1,0 +1,23 @@
+.card {
+  border-radius: 9px;
+  border: 1px solid #dde0e5 !important;
+  margin-bottom: 30px;
+  box-shadow: 0 0.125rem 5px -0.0625rem #0c1a241a, 0 0.0625rem 0.0625rem #0c1a240a !important;
+}
+
+.img {
+  height: 350px;
+  overflow: hidden;
+}
+
+.img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  padding: 15px;
+  transition: 0.2s ease all;
+}
+
+.img:hover img {
+  transform: scale(1.05);
+}

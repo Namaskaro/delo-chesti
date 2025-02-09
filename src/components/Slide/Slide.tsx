@@ -47,7 +47,7 @@ const Slide = (props: DonationSlideProps) => {
               <div className="description">{description}</div>
               <div className="action">
                 <button className="btn_charity">
-                  {formType === 'charity' && 'Пожертвовать'}
+                  {formType === 'charity' && <a href="#donate"> Пожертвовать</a>}
                   {formType === 'help' && <a href="/poluchit-pomosch"> Оставить заявку</a>}
                 </button>
                 <button className="btn_detail">

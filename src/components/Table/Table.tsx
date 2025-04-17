@@ -10,14 +10,14 @@ interface TableItem {
 }
 
 interface TableProps {
-  data: TableItem[];
+  data: TableItem[] | undefined;
 }
 
 const Table = (props: TableProps) => {
   const { data } = props;
   return (
-    <div>
-      {data.some((item) => item.subname) ? (
+    <div className="table-responsive">
+      {data?.some((item) => item.subname) ? (
         <table className="table table-success table-striped table-bordered table-responsive">
           <thead>
             <tr>
@@ -41,26 +41,28 @@ const Table = (props: TableProps) => {
           </tbody>
         </table>
       ) : (
-        <table className="table table-success table-striped table-bordered table-responsive">
-          <thead>
-            <tr>
-              <th>Наименование</th>
-              <th>Количество</th>
-              <th>Цена за 1 единицу</th>
-              <th>Общая сумма</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
+        <div className="table-responsive">
+          <table className="table table-success table-striped table-bordered table-responsive">
+            <thead>
               <tr>
-                <td>{item.name}</td>
-                <td>{item.amount}</td>
-                <td>{item.price}</td>
-                <td>{item.totalAmount}</td>
+                <th>Наименование</th>
+                <th>Количество</th>
+                <th>Цена за 1 единицу</th>
+                <th>Общая сумма</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data?.map((item) => (
+                <tr>
+                  <td>{item.name}</td>
+                  <td>{item.amount}</td>
+                  <td>{item.price}</td>
+                  <td>{item.totalAmount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

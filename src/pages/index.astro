@@ -16,7 +16,8 @@ const documents = [
 	{id:2, title: 'Лист записи ЕГРЮЛ', link: '/documents/list-egrul.pdf', date: '04.06.2024'},					
 	{id:3, title: 'Свидетельство о постановке на налоговый учет', link: '/documents/svidetelstvo-o-postanovke-nalogovaya.pdf', date: '04.06.2024'},			
 	{id:4, title: 'Свидетельство о регистрации', link: '/documents/registraciya.pdf', date: '28.05.2024'},	
-	{id:5, title: 'Реквизиты фонда', link: '/documents/card.pdf', date: '05.06.2024'},														
+	{id:5, title: 'Реквизиты фонда', link: '/documents/card.pdf', date: '05.06.2024'},		
+	{id:6, title: 'Благотворительная программа "Помощь СВО"', link: '/documents/blagotvoritelnaya_programma_pomosch_svo.pdf', date: '16.06.2024'},												
 ]
 
 const news = [
@@ -37,7 +38,57 @@ const news = [
 <Layout title="Благотворительный фонд Дело Чести" description="Благотворительный фонд Дело Чести">
 	<main>
 		<Banner/>
-	
+		<section class="victory">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="title">
+							<h2>80 лет Победы</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row victory_content">
+					<div class="col-12 col-lg-6">
+						<div class="victory_img">
+							<img src="/img/victory/victory.jpg" alt="">
+				    </div>
+					</div>
+					
+					<div class="col-12 col-lg-6">
+						<div class="victory_text">
+							<p>
+								В рамках юбилея Великой Отечественной войны мы запускаем новую рубрику #80летПобеды, посвящённую важным аспектам нашего героического прошлого. Одной из таких тем является благотворительность во времена войны. 
+							</p>
+							<p>
+								Несмотря на то, что точно подсчитать количество жертв той страшной войны до сих пор не удалось, мы можем говорить о масштабах материальных затрат. По современным оценкам, суммы, вложенные в укрепление армии и поддержку фронта, составляют миллиарды рублей. Эти средства использовались не только для закупки оружия и техники, но и для помощи раненым бойцам и решения социальных вопросов, возникавших в условиях войны.
+							</p>
+							<p>
+								То время было истинным примером единства народа в трудные моменты. Фонд обороны объединил усилия людей самых разных профессий и возрастов. От стариков до молодёжи, от рабочих до специалистов – все осознали важность своего вклада и сплочённо поддерживали своих защитников.
+							</p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="victory_text">
+							<p>
+								Пожертвования не ограничивались деньгами. Люди стремились помогать по-разному: передавали одежду, обувь, продукты и другие необходимые вещи на фронт и тем, кто пострадал от войны. Эти акты доброты и сплочённости показали, как силен дух нашего народа в борьбе за свободу и независимость.
+							</p>
+							<p>
+								Фонд обороны стал не только источником материальной помощи, но и символом моральной стойкости. В письмах, публиковавшихся в газете «Правда», мы видим полные надежды и любви к Родине слова, которые вдохновляют нас спустя поколения.
+							</p>
+							<p>
+								В эти юбилейные годы пусть эта память о взаимопомощи и патриотизме станет примером для нас всех. Присоединяйтесь к нашей рубрике #80летПобеды и делитесь своими историями о солидарности и любви к нашему Отечеству.
+							</p>
+							<div class="action">
+								<button class="btn_details">
+									<a href="/80-let-pobedy">Подробнее</a>
+								</button>			
+							</div>	
+						</div>
+						
+					</div>	
+				</div>
+			</div>
+			</section>
 		<section class="about">
 			<div class="container">
 				<div class="row">
@@ -110,7 +161,7 @@ const news = [
 		<PaymentForm title="Помочь за 1 минуту" id="donate"/>	
 	<section class="documents" id="documents">
 		<div class="container">
-			<div class="row">
+			<div class="row mx-md-n5">
 				<div class="col-12">	
 					<div class="title">
 						<h2>Документы</h2>
@@ -141,6 +192,53 @@ const news = [
 </Layout>
 
 <style>
+
+	.victory {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.victory .victory_content {
+		padding: 15px;
+		background: #ffffff;
+    border-radius: 9px;
+    box-shadow: 2px 4px 8px #223c5033;
+	}
+	.victory .victory_content .victory_img {
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		border-radius: 9px;												
+	}
+
+	.victory .victory_content .victory_img img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;										
+	}
+
+	.victory .victory_content .victory_text .action .btn_details{
+		padding: 10px;
+    width: 300px;
+		max-width: 300px;
+    outline: none;
+    border: 1px solid #285347;
+    color: #ffffff;
+    background: #285347;
+    margin-top: 10px;
+    border-radius: 9px;
+	}
+
+	.victory .victory_content .victory_text .action {
+		margin-top: 0px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.victory .victory_content .victory_text .action .btn_details a{
+		text-decoration: none;
+		color: #ffffff;
+	}
 	 
 	.head {
 		margin-top: 100px;

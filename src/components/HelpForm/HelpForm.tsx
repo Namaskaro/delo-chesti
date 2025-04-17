@@ -82,7 +82,7 @@ const HelpForm = () => {
                   );
                   try {
                     const res = await fetch(
-                      'https://gfswjsfhioslgexzrnnd.supabase.co/functions/v1/resend',
+                      'https://sxmbiwdguszrcovkvfnb.supabase.co/functions/v1/resend',
                       {
                         method: 'POST',
                         mode: 'no-cors',
